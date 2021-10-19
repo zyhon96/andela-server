@@ -5,5 +5,6 @@ import { checkAuth } from './middlewares/checkAuth';
 const order = Router();
 
 order.post('/', checkAuth, createOrder);
+// order.patch`('/${order_id}/', checkAuth,  )`;
 
 export default order;

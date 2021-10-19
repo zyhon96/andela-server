@@ -1,10 +1,13 @@
 import Order from '../database/order';
 import Cars from '../database/carss';
+// eslint-disable-next-line no-unused-vars
 import { respondWithSuccess, respondWithWarning } from '../helpers/responseHandler';
 
+// eslint-disable-next-line consistent-return
 export const createOrder = async (req, res, next) => {
   try {
     const { id } = req.auth;
+    // eslint-disable-next-line camelcase
     const { price_offered, carId } = req.body;
 
     // find if this car exit
@@ -25,8 +28,6 @@ export const createOrder = async (req, res, next) => {
       price_offered,
       buyerId: id,
     };
-    console.log(orderrCar);
-
     return res.status(200).send({
       message: 'Car ordered successfully',
       data: { orderrCar },
@@ -35,7 +36,7 @@ export const createOrder = async (req, res, next) => {
   } catch (err) {
     next(err);
   }
-}; 
+};
 
 export const me = () => {
 

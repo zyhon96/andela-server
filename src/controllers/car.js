@@ -1,5 +1,6 @@
 import Car from '../database/carss';
 
+// eslint-disable-next-line consistent-return
 export const createCar = async (req, res, next) => {
   try {
     const {
@@ -20,7 +21,6 @@ export const createCar = async (req, res, next) => {
       status,
       ownerId: userId,
     };
-    console.log(postCar);
 
     return res.status(200).send({
       message: 'Car created successfully',
